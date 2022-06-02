@@ -1,2 +1,2 @@
 # sigurvin_web
-website for the folk.ntnu.sigurvin website that i poses through work
+website for the folk.ntnu.sigurvin website that i posess through work
