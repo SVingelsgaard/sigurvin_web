@@ -22,5 +22,3 @@ urlpatterns = [
     path('', include('homepage.urls')),
     path('smalltown/', include('smalltown.urls')),
 ]
-
-#urlpatterns += static(settings.static_)

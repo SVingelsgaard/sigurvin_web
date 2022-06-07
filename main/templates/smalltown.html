@@ -14,9 +14,10 @@
     </head>
     <body>
     
-        <form action="">
+        <form action="" method="post">
+            {% csrf_token %}
             <div class="container">
-                <input id='input' type="text" placeholder="Input item" value="">
+                <input id='grocery' name="grocery" type="text" placeholder="Input item" value="">
             </div>
             
             <button class="submit" id="submitButton">
@@ -24,15 +25,22 @@
             </button>
         </form>
 
+        <div class="text">
+            <p>your grocery's:</p>
+            {% for myShoppinglist in myShoppinglists %}
+                <p>{{ myShoppinglist.grocery }}</p>
+            {% endfor %}
+        </div>
+
         <div class="background">
-            <img src="{%  static  "/images/lilleby_wallpaper.jpg"  %}" alt="" class="image">
+            <img src="{%  static  "/images/lilleby_wallpaper.jpg"  %}" alt="">
         </div>
 
     </body>
 
     <script>
         const submitImage = document.getElementById('submitImage');
-        const input = document.getElementById('input');
+        const input = document.getElementById('grocery');
         const submitButton = document.getElementById('submitButton');
         const pizza = document.getElementById('pizza');
 
