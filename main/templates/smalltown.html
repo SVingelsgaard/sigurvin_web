@@ -25,10 +25,10 @@
             </button>
         </form>
 
-        <div class="text">
-            <p>your grocery's:</p>
-            {% for myShoppinglist in myShoppinglists %}
-                <p>{{ myShoppinglist.grocery }}</p>
+        <div>
+            <p> Groceries: </p>
+            {% for Shoppinglist in Shoppinglist%}
+                <p>{{ Shoppinglist.grocery }}</p>
             {% endfor %}
         </div>
 
