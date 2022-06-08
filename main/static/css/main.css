@@ -98,11 +98,13 @@ p {
   font-family: 'new-order';
   font-weight: light;
   font-size: 2em;
+  color: rgb(0, 0, 0);
 }
 
 .all-items {
   display: flex;
   place-content: center;
+  
 }
 
 button.remove {
