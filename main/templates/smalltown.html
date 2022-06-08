@@ -27,15 +27,7 @@
 
         <form action="remove_grocery" method="post">
             {% csrf_token %}
-            <div class="full-list">
-                <h2> Groceries: {{Shoppinglist.id}}</h2>
-                {% for Shoppinglist in Shoppinglist %}
-                    <div class="all-items">
-                        <p>{{ Shoppinglist.grocery }}</p>
-                        <button class="remove" id="Shoppinglist.id">
-                            <img id="removeItem" class="blender" src="{%  static  "/images/remove-item.svg"  %}" alt="" >
-                        </button>
-                    </div>
+   
             <div>
                 <p> Groceries: {{Shoppinglist.grocery}}</p>
                 {% for Shoppinglist in Shoppinglist %}
