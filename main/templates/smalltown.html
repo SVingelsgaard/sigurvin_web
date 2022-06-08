@@ -29,12 +29,15 @@
             {% csrf_token %}
    
             <div>
-                <p> Groceries: {{Shoppinglist.grocery}}</p>
+                <h2> Groceries: {{Shoppinglist.grocery}}</h2>
                 {% for Shoppinglist in Shoppinglist %}
-                    <p>{{ Shoppinglist.grocery }}</p>
-                    <button class="remove" id="removeButton">
-                        <img id='submitImage' src="{%  static  "/images/add.svg"  %}" alt="" >
-                    </button>
+                    <div class="all-items">
+                        <p>{{ Shoppinglist.grocery }}</p>
+                        <button class="remove" id="removeButton">
+                            <img id='removeItem' class="blender" src="{%  static  "/images/remove-item.svg"  %}" alt="" >
+                        </button>
+                    </div>
+                    
                 {% endfor %}
             </div> 
         </form>
