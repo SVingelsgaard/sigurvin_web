@@ -31,12 +31,15 @@
             <div>
                 <h2> Groceries: {{Shoppinglist.grocery}}</h2>
                 {% for Shoppinglist in Shoppinglist %}
-                    <div class="all-items">
-                        <p>{{ Shoppinglist.grocery }}</p>
-                        <button class="remove" id="removeButton">
-                            <img id='removeItem' class="blender" src="{%  static  "/images/remove-item.svg"  %}" alt="" >
-                        </button>
+                    <div class="all-items-parent">
+                        <div class="all-items">
+                            <p class="item-text">{{ Shoppinglist.grocery }}</p>
+                            <button class="remove" id="removeButton">
+                                <img id='removeItem' class="blender" src="{%  static  "/images/remove-item.svg"  %}" alt="" >
+                            </button>
+                        </div>
                     </div>
+                    
                     
                 {% endfor %}
             </div> 

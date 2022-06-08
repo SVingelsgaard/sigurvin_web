@@ -92,6 +92,7 @@ h2 {
   font-family: 'new-order';
   font-size: 3.5em;
   color: white;
+  margin-top: -2em;
 }
 
 p {
@@ -99,13 +100,39 @@ p {
   font-weight: light;
   font-size: 2em;
   color: rgb(0, 0, 0);
+  padding: 0;
 }
 
 .all-items {
   display: flex;
   place-content: center;
+  padding: 0em;
+  margin-block: -1em;
+  width: 10vw;
+
+  
+  border-radius: 5vh;
   
 }
+/*
+@supports ((-webkit-backdrop-filter: blur(1em)) or (backdrop-filter: blur(1em))) {
+  .all-items {
+    background: rgba(255, 255, 255, 0.212) !important;
+    -webkit-backdrop-filter: blur(0.8rem);
+            backdrop-filter: blur(0.8rem);
+  }
+  .all-items {
+    color: gray !important;
+  }
+} */
+
+.all-items-parent {
+  display: flex;
+  place-content: center;
+  padding: 1em;
+}
+
+
 
 button.remove {
   background: none;
