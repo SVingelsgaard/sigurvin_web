@@ -27,10 +27,10 @@
         <form action="remove_grocery" method="post">
             {% csrf_token %}
             <div>
-                <p> Groceries: {{Shoppinglist.id}}</p>
+                <p> Groceries: {{Shoppinglist.grocery}}</p>
                 {% for Shoppinglist in Shoppinglist %}
                     <p>{{ Shoppinglist.grocery }}</p>
-                    <button class="remove" id="Shoppinglist.id">
+                    <button class="remove" id="removeButton">
                         <img id='submitImage' src="{%  static  "/images/add.svg"  %}" alt="" >
                     </button>
                 {% endfor %}
