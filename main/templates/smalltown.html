@@ -14,7 +14,7 @@
     </head>
     <body>
     
-        <form action="" method="post">
+        <form action="add_grocery" method="post">
             {% csrf_token %}
             <div class="container">
                 <input id='grocery' name="grocery" type="text" placeholder="Input item" value="">
@@ -24,13 +24,20 @@
                 <img id='submitImage' src="{%  static  "/images/add.svg"  %}" alt="" style="display: none;">
             </button>
         </form>
+        <form action="remove_grocery" method="post">
+            {% csrf_token %}
+            <div>
+                <p> Groceries: {{Shoppinglist.id}}</p>
+                {% for Shoppinglist in Shoppinglist %}
+                    <p>{{ Shoppinglist.grocery }}</p>
+                    <button class="remove" id="Shoppinglist.id">
+                        <img id='submitImage' src="{%  static  "/images/add.svg"  %}" alt="" >
+                    </button>
+                {% endfor %}
+            </div> 
+        </form>
 
-        <div>
-            <p> Groceries: </p>
-            {% for Shoppinglist in Shoppinglist%}
-                <p>{{ Shoppinglist.grocery }}</p>
-            {% endfor %}
-        </div>
+        
 
         <div class="background">
             <img src="{%  static  "/images/lilleby_wallpaper.jpg"  %}" alt="">
