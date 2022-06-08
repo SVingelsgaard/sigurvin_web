@@ -36,6 +36,13 @@
                             <img id="removeItem" class="blender" src="{%  static  "/images/remove-item.svg"  %}" alt="" >
                         </button>
                     </div>
+            <div>
+                <p> Groceries: {{Shoppinglist.grocery}}</p>
+                {% for Shoppinglist in Shoppinglist %}
+                    <p>{{ Shoppinglist.grocery }}</p>
+                    <button class="remove" id="removeButton">
+                        <img id='submitImage' src="{%  static  "/images/add.svg"  %}" alt="" >
+                    </button>
                 {% endfor %}
             </div> 
         </form>
