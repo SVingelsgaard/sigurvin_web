@@ -24,15 +24,18 @@
                 <img id='submitImage' src="{%  static  "/images/add.svg"  %}" alt="" style="display: none;">
             </button>
         </form>
+
         <form action="remove_grocery" method="post">
             {% csrf_token %}
-            <div>
-                <p> Groceries: {{Shoppinglist.id}}</p>
+            <div class="full-list">
+                <h2> Groceries: {{Shoppinglist.id}}</h2>
                 {% for Shoppinglist in Shoppinglist %}
-                    <p>{{ Shoppinglist.grocery }}</p>
-                    <button class="remove" id="Shoppinglist.id">
-                        <img id='submitImage' src="{%  static  "/images/add.svg"  %}" alt="" >
-                    </button>
+                    <div class="all-items">
+                        <p>{{ Shoppinglist.grocery }}</p>
+                        <button class="remove" id="Shoppinglist.id">
+                            <img id="removeItem" class="blender" src="{%  static  "/images/remove-item.svg"  %}" alt="" >
+                        </button>
+                    </div>
                 {% endfor %}
             </div> 
         </form>
@@ -50,6 +53,7 @@
         const input = document.getElementById('grocery');
         const submitButton = document.getElementById('submitButton');
         const pizza = document.getElementById('pizza');
+        const removeItem = document.getElementById('removeItem');
 
         input.addEventListener('input', () => {
             
@@ -61,10 +65,17 @@
         });
         
         submitButton.addEventListener('mouseover', () => {
-            submitImage.src = "{%  static  "/images/add.svg"  %}";
+            submitImage.src = "{%  static  "/images/add2.svg"  %}";
         });
         submitButton.addEventListener('mouseleave', () => {
-            submitImage.src = "{%  static  "/images/add2.svg"  %}";
+            submitImage.src = "{%  static  "/images/add.svg"  %}";
+        });
+
+        removeItem.addEventListener('mouseover', () => {
+            removeItem.src = "{%  static  "/images/remove-item-hover.svg"  %}";
+        });
+        removeItem.addEventListener('mouseleave', () => {
+            removeItem.src = "{%  static  "/images/remove-item.svg"  %}";
         });
 
         input.addEventListener('input', () => {
