@@ -20,3 +20,4 @@ def remove_grocery(request):
         print(id)
         #Shoppinglist.objects.get(pk=51).delete()
     return redirect("home")
+    #filthy test
