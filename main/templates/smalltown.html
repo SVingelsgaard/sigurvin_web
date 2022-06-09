@@ -7,9 +7,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>SmallTown</title>
+        <title>Shoppinglist</title>
         <link rel="stylesheet" type="text/css" media="screen" href="{%  static  "/css/main.css"  %}">
-        <link rel="icon" type="image/png" href="{%  static  "/images/whiteIcon.jpg"  %}">
+        <link rel="icon" type="image/png" href="{%  static  "/images/add.svg"  %}">
         
     </head>
     <body>
@@ -17,7 +17,7 @@
         <form action="add_grocery" method="post">
             {% csrf_token %}
             <div class="container">
-                <input id='grocery' name="grocery" type="text" placeholder="Input item" value="">
+                <input id='grocery' name="grocery" type="text" placeholder="Input item" value=""></input>
             </div>
             
             <button class="submit" id="submitButton">
@@ -29,18 +29,17 @@
             {% csrf_token %}
    
             <div>
-                <h2> Groceries: {{Shoppinglist.grocery}}</h2>
+                <h2> Groceries:</h2>
                 {% for Shoppinglist in Shoppinglist %}
                     <div class="all-items-parent">
-                        <div class="all-items">
+                        <div class="all-items" type="text" id="sdfsdfsdf" name="toRemove" value="Sh">
                             <p class="item-text">{{ Shoppinglist.grocery }}</p>
                             <button class="remove" id="removeButton">
                                 <img id='removeItem' class="blender" src="{%  static  "/images/remove-item.svg"  %}" alt="" >
                             </button>
+                            <input id='remove' name="idfk" type="text" placeholder="X" value={{Shoppinglist.id}}></input>
                         </div>
                     </div>
-                    
-                    
                 {% endfor %}
             </div> 
         </form>

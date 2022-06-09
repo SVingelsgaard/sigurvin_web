@@ -8,7 +8,6 @@ def home(request):
 def add_grocery(request):
     if request.method == "POST":
         grocery = request.POST.get("grocery")
-        print(grocery)
         Shoppinglist.objects.create(grocery = grocery, description = "blanch")
         #shoud make it so i the item is not named shoppinglist
         
@@ -16,8 +15,8 @@ def add_grocery(request):
 
 def remove_grocery(request):
     if request.method == "POST":
-        id = request.POST.get("testy")
+        id = request.POST.get("idfk")
         print(id)
-        #Shoppinglist.objects.get(pk=51).delete()
+        Shoppinglist.objects.get(pk=id).delete()
     return redirect("home")
     #filthy test
